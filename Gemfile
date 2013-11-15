@@ -6,7 +6,6 @@ gem "railties"
 gem 'jquery-rails'
 
 gem 'neat'
-gem 'pg'
 gem "haml-rails"
 gem 'meta-tags', :require => 'meta_tags'
 gem 'thin'
@@ -42,6 +41,11 @@ group :development do
   gem 'guard-spork', :github => 'guard/guard-spork'
   gem 'childprocess'
   gem 'spork', '0.9.2'
+end
+
+group :production do
+   gem 'pg'
+   gem 'rails_12factor'
 end
 
 group :test do

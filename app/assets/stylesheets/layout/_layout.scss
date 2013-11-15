@@ -1,0 +1,6 @@
+.l-layout{
+  @include outer-container;
+  background: $white;
+  padding: 2em;
+  margin-top: 2em;
+}

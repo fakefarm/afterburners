@@ -1,0 +1,10 @@
+.mix{
+  @include row;
+}
+
+.mix-details{
+  @include span-columns(4);
+  img{
+    width: 100%;
+  }
+}
