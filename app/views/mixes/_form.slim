@@ -1,0 +1,12 @@
+= form_for @mix do |f|
+  .entry
+    = f.label :spotify_url
+    = f.text_field :spotify_url
+  .entry
+    = f.label :title
+    = f.text_field :title
+  .entry
+    = f.label :body
+    = f.text_field :body
+  .submit
+    = f.submit
