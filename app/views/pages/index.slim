@@ -1,13 +1,9 @@
 = image_tag 'header.jpg'
 
-p People make better play lists than advertisers or algorithms do.
-= link_to 'Submit a playlist', new_mix_path
+h1.headline People make better play lists than advertisers or algorithms do.
+.button-garnish
+  .button= link_to 'Submit a playlist', new_mix_path
 
 h2 Search current ones
 - @mixes.each do |mix|
   p=link_to mix.title, mix
-
-hr
-ul
- li= link_to "The original blog", "http://www.afterburnersclub.blogspot.com", target: '_blank'
- li= link_to "@AfterburnersMx", "http://www.twitter.com/AfterburnersMx", target: '_blank'
