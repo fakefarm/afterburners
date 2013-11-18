@@ -1,0 +1,21 @@
+@mixin mybutton($color: $tan ) {
+  input[type="submit"] {
+    background: $color;
+    border: none;
+    padding: 1em;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+input[type="submit"] {
+  background: $go;
+  border: none;
+  padding: 1em;
+  width: 100%;
+  margin: 0;
+  color: $tan;
+  &:hover{
+    background: $coffee;
+  }
+}

@@ -8,3 +8,24 @@
     width: 100%;
   }
 }
+
+// New Mix Page
+
+.entry{
+  @include row;
+  border-bottom: 1px dashed $tan;
+  padding: 2em;
+  .details{
+    @include span-columns(5);
+  }
+  .step-details{
+    @include span-columns(7);
+  }
+}
+
+
+.mix-submit{
+  @include shift(9);
+  @include span-columns(3);
+}
+

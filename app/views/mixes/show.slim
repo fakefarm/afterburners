@@ -2,11 +2,8 @@ h1= @mix.title
 h2 "Mix #{@mix.id}"
 .mix
   .mix-details
-    .cover-art
-      =image_tag 'cover71.png'
     .bio
       p= @mix.body
-    .dj
-      h3 by Dave
   .player
     <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>
+h3= link_to "New Mix", new_mix_path

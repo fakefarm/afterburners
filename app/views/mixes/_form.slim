@@ -1,12 +1,28 @@
 = form_for @mix do |f|
+
+  - if @mix.errors
+    ul
+      - @mix.errors.full_messages.each do |message|
+        li= message
+
   .entry
-    = f.label :spotify_url
-    = f.text_field :spotify_url
+    .details
+      p= f.label :spotify_url, "Spotify URI"
+      = f.text_field :spotify_url
+    .step-details
+      = image_tag 'uri.png'
+      p Right click the playlist name and click 'copy Spotify URI'
   .entry
-    = f.label :title
-    = f.text_field :title
+    .details
+      p= f.label :title
+      = f.text_field :title
+    .step-details
+      p How would you summarize what that playlist captures?
   .entry
-    = f.label :body
-    = f.text_field :body
-  .submit
-    = f.submit
+    .details
+      p= f.label :body
+      = f.text_area :body
+    .step-details
+      p Share what inspired you to make this mix.
+  .mix-submit
+    p= f.submit
