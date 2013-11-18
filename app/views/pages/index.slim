@@ -1,2 +1,9 @@
 h1 Afterburners.mx
-= link_to 'new mix', new_mix_path
+
+p People make better play lists than advertisers or algorithms do.
+= link_to 'Submit a playlist', new_mix_path
+
+h2 Or, search current ones
+- @mixes.each do |mix|
+  p=link_to mix.title, mix
+
