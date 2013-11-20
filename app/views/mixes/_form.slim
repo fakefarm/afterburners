@@ -1,9 +1,5 @@
+= render 'layouts/shared/errors', obj: @mix
 = form_for @mix do |f|
-
-  - if @mix.errors
-    ul
-      - @mix.errors.full_messages.each do |message|
-        li= message
 
   .entry
     .details

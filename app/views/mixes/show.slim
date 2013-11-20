@@ -1,5 +1,7 @@
 h1= @mix.title
-h2 "Mix #{@mix.id}"
+h2
+  span= "by "
+  span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
 .mix
   .mix-details
     .bio

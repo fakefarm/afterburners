@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116002853) do
+ActiveRecord::Schema.define(version: 20131120170248) do
 
   create_table "mixes", force: true do |t|
     t.string   "title"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20131116002853) do
     t.string   "spotify_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "username"
   end
 
 end
