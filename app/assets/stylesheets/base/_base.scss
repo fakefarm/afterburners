@@ -1,7 +1,7 @@
 // Placeholder
 
 body{
-  background: $tan;
+  background: $white;
   font-size: 100%;
 }
 
@@ -9,3 +9,9 @@ h1, h2, h3, h4, h5, p, li, a {
   font-family: 'proxima nova';
 }
 
+a{
+  text-decoration: none;
+  &:hover{
+    color: $white;
+  }
+}

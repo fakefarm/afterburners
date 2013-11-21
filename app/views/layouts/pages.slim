@@ -7,8 +7,8 @@ html
     = csrf_meta_tags
     = render 'layouts/shared/typekit'
   body
+    = render 'layouts/header/header'
     .l-container
-      = render 'layouts/header/header'
       = render 'layouts/shared/flash'
       = yield
-      = render 'layouts/shared/footer'
+    = render 'layouts/shared/footer'

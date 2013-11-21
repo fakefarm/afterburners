@@ -1,12 +1,30 @@
+.mix-summary{
+  @include row;
+  background: $black;
+  color: $white;
+  padding: 0 1em;
+  margin-bottom: 0.5em;
+  font-weight: 800;
+  font-size: 1.2em;
+  .title, .author{
+    @include span-columns(3);
+  }
+  .votes{
+    @include span-columns(6);
+    text-align: right;
+  }
+  a{ color: $tan;
+    &:hover{
+      color: $white;
+    }
+  }
+}
 .mix{
   @include row;
 }
 
 .mix-details{
   @include span-columns(4);
-  img{
-    width: 100%;
-  }
 }
 
 // New Mix Page
@@ -30,4 +48,6 @@
 }
 
 
-
+.player{
+  float: right;
+}

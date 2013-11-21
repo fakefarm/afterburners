@@ -2,7 +2,44 @@
   @include outer-container;
 }
 .l-main{
-  background: $white;
   padding: 2em;
   margin-top: 2em;
+}
+
+.l-header{
+  background: $black;
+  .nav{
+    @include outer-container;
+    padding: 0;
+    text-align: right;
+  }
+  ul{
+    padding: 0.5em 0;
+    margin: 0;
+  }
+  li{
+    display: inline-block;
+    list-style: none;
+    color: $white;
+  }
+  a{
+    display: block;
+    padding: 0 0.5em;
+    margin: 0 0.5em;
+  }
+}
+
+.l-footer{
+  background: $black;
+  padding: 0 0 5em 0;
+  .copy{ @include outer-container; }
+}
+
+
+.l-header, .l-footer{
+  a{ color: $tan;
+  &:hover{
+    color: $white;
+  } }
+  color: $white;
 }

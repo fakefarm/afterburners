@@ -1,3 +1,11 @@
-h1 Users!
+h1 Friends
 - @users.each do |user|
+  = gravatar_for user
   p= link_to user.username, user
+  p
+    = user.mixes.count
+    span= ' mixes'
+  - if user.mixes.first
+    p
+      span= 'Latest: '
+      =link_to user.mixes.first.title, mix_path(user.mixes.first)

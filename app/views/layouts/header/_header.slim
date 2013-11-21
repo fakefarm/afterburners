@@ -1,8 +1,12 @@
-ul
-  - if logged_in?
-    li= "Hi, #{current_user.username}!"
-    li= link_to 'users', users_path
-    li= link_to 'Peace out', logout_path
-  - else
-    li= link_to 'sign up', signup_path
-    li= link_to 'log in', login_path
+.l-header
+  .nav
+    ul
+      - if logged_in?
+        li= link_to current_user.username.titlecase, users_path
+        li= link_to 'New Mix', new_mix_path
+        li= link_to 'Mixes', mixes_path
+        li= link_to 'Friends', users_path
+        li= link_to 'Peace out', logout_path
+      - else
+        li= link_to 'sign up', signup_path
+        li= link_to 'log in', login_path

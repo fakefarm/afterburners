@@ -1,11 +1,15 @@
-h1= @mix.title
-h2
-  span= "by "
-  span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
+.mix-summary
+  .title
+    p= @mix.title
+  .author
+    p
+      span= "by "
+      span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
+  .votes
+    p=link_to 'up vote'
 .mix
   .mix-details
     .bio
       p= @mix.body
   .player
-    <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>
-h3= link_to "New Mix", new_mix_path
+    <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}&theme=white" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>
