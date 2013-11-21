@@ -1,5 +1,6 @@
 class MixesController < ApplicationController
-  before_action :set_mix, only: [:show, :edit, :update, :destroy]
+  before_action :find_mix, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
 
   def index
     @mixes = Mix.all
@@ -51,7 +52,7 @@ class MixesController < ApplicationController
 
   private
 
-    def set_mix
+    def find_mix
       @mix = Mix.find(params[:id])
     end
 

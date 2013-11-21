@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+
   def new
     @user = User.new
   end
@@ -35,8 +37,7 @@ class UsersController < ApplicationController
   end
 
  def destroy
-  @user = User.find(params[:id])
-  @user.delete
+  @user.destroy
   redirect_to root_path
  end
 
