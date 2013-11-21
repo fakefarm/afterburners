@@ -1,12 +1,13 @@
 .l-container{
   @include outer-container;
+  padding-bottom: 8em;
 }
 .l-main{
   padding: 2em;
   margin-top: 2em;
 }
 
-.l-header{
+.l-header, .l-footer{
   background: $black;
   .nav{
     @include outer-container;
