@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120170248) do
+ActiveRecord::Schema.define(version: 20131121175852) do
+
+  create_table "comments", force: true do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mixes", force: true do |t|
     t.string   "title"
@@ -27,6 +36,15 @@ ActiveRecord::Schema.define(version: 20131120170248) do
     t.string "email"
     t.string "password_digest"
     t.string "username"
+  end
+
+  create_table "votes", force: true do |t|
+    t.boolean  "vote"
+    t.integer  "user_id"
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
