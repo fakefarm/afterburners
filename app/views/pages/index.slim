@@ -1,9 +1,13 @@
-= image_tag 'header.jpg'
+/ = image_tag 'header.jpg'
 
-h1.headline People make better play lists than advertisers or algorithms do.
+.headline
+  h1 Music is more than listening.
+  h2 Playlists are about a season of life, a special relationship, or an emotional high.
 .button-garnish
-  .button= link_to 'Submit a playlist', new_mix_path
-
+  .copy
+    h3 What's your story?
+  .action
+    .button= link_to 'Submit a playlist', new_mix_path
 h2 Search current ones
 - @mixes.each do |mix|
   p=link_to mix.title, mix

@@ -1,5 +1,16 @@
 .button-garnish{
   @include row;
-  background: $tan;
+  background: white;
   padding: 2em;
+  .copy, .action {
+    @include span-columns(6);
+  }
+  h3{
+    font-size: 3em;
+  }
+  .action{
+    .button{
+      margin-top: 2.5em;
+    }
+  }
 }
