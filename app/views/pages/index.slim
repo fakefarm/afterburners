@@ -1,7 +1,5 @@
-/ = image_tag 'header.jpg'
-
 .headline
-  h1 What's the story behind your mix?
+  h1 What's the <i>story</i> behind your mix?
   h2 The best memories have a song in the background.
 .button-garnish
   .copy
@@ -10,8 +8,4 @@
     .button= link_to new_mix_path do
       = "Submit a playlist "
       i.fa.fa-arrow-circle-o-right
-h2 Search current ones
-- @mixes.each do |mix|
-  =link_to mix do
-    p.fa.fa-chevron-circle-right
-      =mix.title
+    i= link_to 'requires a Spotify account', 'https://www.spotify.com/us/', target: '_blank'

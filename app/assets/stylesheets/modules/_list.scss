@@ -1,5 +1,9 @@
 .list{
   a{
     color: $black;
+    &:hover{
+      color: $blue;
+    }
+    background: white;
   }
 }

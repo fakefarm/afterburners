@@ -12,14 +12,14 @@
         li= link_to new_mix_path do
           = "New Mix "
           i.fa.fa-play-circle
-        li= link_to mixes_path do
-          = "Popular "
-          i.fa.fa-thumbs-o-up
-        li= link_to users_path do
-          = 'Friends '
-          i.fa.fa-group
+        / li= link_to votes_path do
+        /   = "Popular "
+        /   i.fa.fa-thumbs-o-up
+        / li= link_to users_path do
+        /   = 'Mixers '
+        /   i.fa.fa-group
         li= link_to logout_path do
-          = "Peace out "
+          = "Peace Out "
           i.fa.fa-sign-out
         - else
         li Afterburners

@@ -37,7 +37,11 @@
   padding: 0 0 5em 0;
   .copy{ @include outer-container; }
 }
-
+.welcome-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 .l-header, .l-footer{
   a{ color: $tan;
