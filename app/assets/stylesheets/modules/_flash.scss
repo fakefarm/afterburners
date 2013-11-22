@@ -1,0 +1,13 @@
+.flash {
+  .error, .notice{
+    margin: 1em 0 0 0;
+    padding: 0.5em 1em;
+    color: white;
+  }
+  .error {
+    background: $red;
+  }
+  .notice {
+    background: $go;
+  }
+}
