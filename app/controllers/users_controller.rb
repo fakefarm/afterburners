@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index, :show, :new]
+  before_action :find_user, except: [:index, :new, :create]
+  before_action :require_user, except: [:new, :create]
+  before_action :authorized_user, only: [:edit, :destroy]
 
   def new
     @user = User.new
@@ -38,6 +39,8 @@ class UsersController < ApplicationController
 
  def destroy
   @user.destroy
+  session[:user_id] = nil
+  flash[:notice] = "Account Deleted!"
   redirect_to root_path
  end
 
@@ -48,5 +51,12 @@ private
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def authorized_user
+    unless current_user.id == params[:id].to_i
+      flash[:error] = 'Not authorized.'
+      redirect_to users_path
+    end
   end
 end

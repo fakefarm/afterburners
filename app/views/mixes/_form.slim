@@ -1,24 +1,26 @@
 = render 'layouts/shared/errors', obj: @mix
+h1.headline The fire is roaring. Tell us a story...
 = form_for @mix do |f|
-
+  =f.hidden_field :user_id, value: current_user.id
+  .entry
+      p How would you summarize what that playlist captures?
+      = f.text_field :title, placeholder: "Roadtrip to Colorado"
+  .entry
+      p Share what inspired you to make this mix.
+      = f.text_area :body, placeholder: "Colorado is probably the greatest place in the world. Not to mention all the smart people that choose to live in Boulder", columns: 200, rows: 20
+  .entry
+    .details
+      p= f.label :image_url, "Upload Album art:"
+      i Image will resize to 370px, square.
+      p= f.filepicker_field :image_url
+    i Yes, that double button is a bug. Use 2nd one :-)
   .entry
     .details
       p= f.label :spotify_url, "Spotify URI"
-      = f.text_field :spotify_url
+      = f.text_field :spotify_url, placeholder: 'spotify:user:12242424429098:playlist:750EyREsZucasC2eMqw'
+      span.step-help= "(what's this?)"
     .step-details
       = image_tag 'uri.png'
-      p Right click the playlist name and click 'copy Spotify URI'
-  .entry
-    .details
-      p= f.label :title
-      = f.text_field :title
-    .step-details
-      p How would you summarize what that playlist captures?
-  .entry
-    .details
-      p= f.label :body
-      = f.text_area :body
-    .step-details
-      p Share what inspired you to make this mix.
+      p Go to Spotify, and right click the playlist name and click 'copy Spotify URI'
   .mix-submit
     p= f.submit

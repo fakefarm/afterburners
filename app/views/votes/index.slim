@@ -1,0 +1,4 @@
+h1 Popular playlists
+- @popular.each do |mix|
+  =link_to mix.voteable.title, mix_path(mix.voteable.id)
+  =link_to mix.user.username, user_path(mix.user.id)

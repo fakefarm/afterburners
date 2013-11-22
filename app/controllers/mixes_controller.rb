@@ -58,6 +58,6 @@ class MixesController < ApplicationController
 
 
     def mix_params
-      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url)
+      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :image_url, :user_id)
     end
 end

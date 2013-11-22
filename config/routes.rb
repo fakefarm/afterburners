@@ -9,6 +9,5 @@ Afterburners::Application.routes.draw do
 
   resources :mixes
   resources :users
-  resources :votes
-
+  resources :votes, only: [:create, :index]
 end
