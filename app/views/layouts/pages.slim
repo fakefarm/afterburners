@@ -10,6 +10,7 @@ html
   body
     = render 'layouts/header/header'
     .l-container
-      = render 'layouts/shared/flash'
-      = yield
+      .l-content
+        = render 'layouts/shared/flash'
+        = yield
     .welcome-footer= render 'layouts/shared/footer'
