@@ -11,6 +11,7 @@ class MixesController < ApplicationController
 
   def new
     @mix = Mix.new
+    @categories = Category.all
   end
 
   def edit
@@ -50,7 +51,7 @@ class MixesController < ApplicationController
     end
   end
 
-  private
+private
 
     def find_mix
       @mix = Mix.find(params[:id])
@@ -58,6 +59,6 @@ class MixesController < ApplicationController
 
 
     def mix_params
-      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :image_url, :user_id)
+      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :category_id, :image_url, :user_id)
     end
 end

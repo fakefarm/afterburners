@@ -3,7 +3,9 @@
     p= @mix.title
   .author
     p
-      span= "by "
+      span= "A "
+      span= link_to @mix.category.title, categories_path
+      span= " mix by "
       span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
   .votes
     p

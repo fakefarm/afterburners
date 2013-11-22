@@ -7,7 +7,11 @@ h1.headline The fire is roaring. Tell us a story...
       = f.text_field :title, placeholder: "Roadtrip to Colorado"
   .entry
       p Share what inspired you to make this mix.
-      = f.text_area :body, placeholder: "Colorado is probably the greatest place in the world. Not to mention all the smart people that choose to live in Boulder", columns: 200, rows: 20
+      = f.text_area :body, placeholder: "Colorado is probably the greatest place in the world. Not to mention all the smart people that choose to live in Boulder", rows: 10
+  .entry
+      p
+        span= "General mood? "
+        = f.collection_select :category_id, @categories, :id, :title
   .entry
     .details
       p= f.label :image_url, "Upload Album art:"
@@ -24,3 +28,4 @@ h1.headline The fire is roaring. Tell us a story...
       p Go to Spotify, and right click the playlist name and click 'copy Spotify URI'
   .mix-submit
     p= f.submit
+
