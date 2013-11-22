@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: [:index, :new, :create]
-  before_action :require_user, except: [:new, :create]
+  before_action :require_user, except: [:new, :create, :show]
   before_action :authorized_user, only: [:edit, :destroy]
 
   def new

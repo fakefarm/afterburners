@@ -11,8 +11,9 @@ html
   body
     = render 'layouts/header/header'
     .l-container
-      .l-main
-        = render 'layouts/shared/flash'
-        = yield
+        .l-content
+          .l-main
+            = render 'layouts/shared/flash'
+            = yield
     = render 'layouts/shared/footer'
     = render 'layouts/shared/file_picker'

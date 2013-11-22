@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !logged_in?
-      flash[:error] = "Must be logged in."
-      redirect_to root_path
+      flash[:error] = "#{ActionController::Base.helpers.link_to "Join now", signup_path} or #{ActionController::Base.helpers.link_to "log in", login_path} to do that :-) ".html_safe
+      redirect_to :back
     end
   end
 end
