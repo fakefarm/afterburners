@@ -4,6 +4,7 @@ html
     title Afterburners
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
+    = filepicker_js_include_tag
     = csrf_meta_tags
     = render 'layouts/shared/font_awesome'
     = render 'layouts/shared/typekit'
@@ -14,3 +15,4 @@ html
         = render 'layouts/shared/flash'
         = yield
     = render 'layouts/shared/footer'
+    = render 'layouts/shared/file_picker'

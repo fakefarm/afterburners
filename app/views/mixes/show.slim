@@ -6,10 +6,16 @@
       span= "by "
       span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
   .votes
-    p=link_to 'up vote'
+    p
+      =link_to votes_path(type: 'Mix', id: @mix.id), method: :post do
+        = 'vote up '
+        i.fa.fa-thumbs-up
+      span=" (#{@mix.votes.count})"
 .mix
   .mix-details
     .bio
+      = filepicker_image_tag @mix.image_url, w: 370, h: 370, fit: 'clip'
       p= @mix.body
+
   .player
     <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}&theme=white" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>
