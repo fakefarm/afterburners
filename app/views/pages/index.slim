@@ -1,13 +1,17 @@
 / = image_tag 'header.jpg'
 
 .headline
-  h1 Music is more than consumption.
-  h2 Playlists capture life's seasons, relationships, and adventures.
+  h1 What's the story behind your mix?
+  h2 The best memories have a song in the background.
 .button-garnish
   .copy
-    h3 Share your story..
+    h3 Share your story...
   .action
-    .button= link_to 'Submit a playlist', new_mix_path
+    .button= link_to new_mix_path do
+      = "Submit a playlist "
+      i.fa.fa-arrow-circle-o-right
 h2 Search current ones
 - @mixes.each do |mix|
-  p=link_to mix.title, mix
+  =link_to mix do
+    p.fa.fa-chevron-circle-right
+      =mix.title

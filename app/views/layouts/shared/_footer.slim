@@ -2,7 +2,9 @@
   .copy
     p Afterburners. Because people make better play lists than advertisers or algorithms do.
     ul
-     li= link_to "Home", root_path
-     li= link_to "The original blog", "http://www.afterburnersclub.blogspot.com", target: '_blank'
-     li= link_to "@AfterburnersMx", "http://www.twitter.com/AfterburnersMx", target: '_blank'
-     li= link_to "made by Dave", "http://you.should.hireDave.me", target: '_blank'
+      li= link_to root_path do
+        = "Home "
+        i.fa.fa-fighter-jet
+      li= link_to "The original blog", "http://www.afterburnersclub.blogspot.com", target: '_blank'
+      li= link_to "@AfterburnersMx", "http://www.twitter.com/AfterburnersMx", target: '_blank'
+      li= link_to "made by Dave", "http://you.should.hireDave.me", target: '_blank'

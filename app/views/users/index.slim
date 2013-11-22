@@ -5,7 +5,7 @@ h1 Friends
   p
     = user.mixes.count
     span= ' mixes'
-  - if user.mixes.first
+  - if user.mixes.last
     p
       span= 'Latest: '
-      =link_to user.mixes.first.title, mix_path(user.mixes.first)
+      =link_to user.mixes.last.title, mix_path(user.mixes.first)

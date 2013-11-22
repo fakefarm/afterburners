@@ -1,5 +1,7 @@
 Afterburners::Application.routes.draw do
 
+  root 'pages#index'
+
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -7,6 +9,6 @@ Afterburners::Application.routes.draw do
 
   resources :mixes
   resources :users
+  resources :votes
 
-  root 'pages#index'
 end

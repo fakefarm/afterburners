@@ -1,13 +1,31 @@
 .l-header
   .nav
+    .logo
+      =link_to root_path do
+        = "Afterburners "
+        i.fa.fa-fighter-jet
     ul
       - if logged_in?
-        li= link_to 'Me', user_path(current_user)
-        li= link_to 'New Mix', new_mix_path
-        li= link_to 'Mixes', mixes_path
-        li= link_to 'Friends', users_path
-        li= link_to 'Peace out', logout_path
-      - else
+        li= link_to user_path(current_user) do
+          = "Me "
+          i.fa.fa-home
+        li= link_to new_mix_path do
+          = "New Mix "
+          i.fa.fa-play-circle
+        li= link_to mixes_path do
+          = "Popular "
+          i.fa.fa-thumbs-o-up
+        li= link_to users_path do
+          = 'Friends '
+          i.fa.fa-group
+        li= link_to logout_path do
+          = "Peace out "
+          i.fa.fa-sign-out
+        - else
         li Afterburners
-        li= link_to 'sign up', signup_path
-        li= link_to 'log in', login_path
+        li= link_to signup_path do
+          = "Sign Up "
+          i.fa.fa-check
+        li= link_to login_path do
+          = "Log in "
+          i.fa.fa-sign-in
