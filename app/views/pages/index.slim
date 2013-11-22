@@ -1,7 +1,14 @@
 .headline
   h1 What's the <i>story</i> behind your mix?
   h2 The best memories have a song in the background.
+
 .button-garnish
+  .mixes
+    - @mixes.each do |mix|
+      .mix
+        = link_to mix_path(mix) do
+          = image_tag mix.image_url
+          p= mix.title
   .copy
     h3 Share your story...
   .action

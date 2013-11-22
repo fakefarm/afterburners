@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @mixes = Mix.all
+    @mixes = Mix.last(4)
   end
 end

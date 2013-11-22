@@ -1,5 +1,12 @@
 .button-garnish{
   @include row;
+  .mixes{
+    @include row;
+    .mix{
+      @include span-columns(3);
+      img{ width: 100%;}
+    }
+  }
   background: white;
   padding: 2em;
   .copy, .action {
@@ -11,6 +18,12 @@
   .action{
     .button{
       margin-top: 2.5em;
+    }
+  }
+  a{
+    color: $black;
+    &:hover{
+      color: $blue;
     }
   }
 }
