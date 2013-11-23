@@ -7,6 +7,8 @@ class MixesController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(commentable_id: @mix.id).reverse
+    @comment = Comment.new
   end
 
   def new
@@ -46,7 +48,7 @@ class MixesController < ApplicationController
   def destroy
     @mix.destroy
     respond_to do |format|
-      format.html { redirect_to mixes_url }
+      format.html { redirect_to user_path(current_user.id) }
       format.json { head :no_content }
     end
   end
@@ -59,6 +61,6 @@ private
 
 
     def mix_params
-      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :category_id, :image_url, :user_id)
+      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :category_id, :image_url, :user_id, :commentable)
     end
 end

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(user_id: params[:id])
   end
 
   def create

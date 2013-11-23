@@ -10,14 +10,36 @@
   .votes
     p
       =link_to votes_path(type: 'Mix', id: @mix.id), method: :post do
-        = 'vote up '
-        i.fa.fa-thumbs-up
+        = 'promote '
+        i.fa.fa-arrow-up
       span=" (#{@mix.votes.count})"
+- if current_user.id == @mix.user_id
+  = link_to "Delete Mix", mix_path(@mix), method: :delete, confirm: "Delete mix?", class: 'delete-link'
 .mix
   .mix-details
     .bio
       = filepicker_image_tag @mix.image_url, w: 370, h: 370, fit: 'clip'
       p= @mix.body
+
+    .comments
+      .new-comment
+        = form_for @comment do |f|
+          = f.hidden_field :commentable_id, value: @mix.id
+          = f.hidden_field :commentable_type, value: "Mix"
+          = f.text_field :comment, placeholder: "comment"
+          = f.submit "Add Comment"
+
+      - @comments.each do |c|
+        .comment-box
+          .comment= c.comment
+          .vote
+            span=" #{c.votes.count} " if c.votes.count > 0
+            =link_to votes_path(voteable_type: 'Comment', voteable_id: c.id), method: :post do
+              = 'agree '
+              i.fa.fa-thumbs-up
+          .user
+            = '- '
+            = link_to c.user.username, user_path(c.user_id)
 
   .player
     <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}&theme=white" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>
