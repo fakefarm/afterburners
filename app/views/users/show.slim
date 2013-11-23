@@ -2,7 +2,7 @@
   .user-summary
     .profile-pic= gravatar_for @user
     h1.username= @user.username
-    - if current_user.id == params[:id].to_i
+    - if logged_in? && current_user.id == params[:id].to_i
       p.email= @user.email
       = link_to "edit profile", edit_user_path(@user)
       span= " | "
