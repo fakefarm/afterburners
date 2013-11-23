@@ -4,4 +4,9 @@ class Mix < ActiveRecord::Base
   belongs_to :category
   has_many :comments, as: :commentable
   has_many :votes, as: :voteable
+
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end
 end
