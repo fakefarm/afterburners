@@ -14,7 +14,7 @@
       .mix-thumb
         h4=link_to mix
           .cover
-            - if mix.image_url.nil?
+            - if mix.image_url.empty?
               = image_tag "abcd1.png"
             - else
               = filepicker_image_tag mix.image_url, w: 370, h: 370, fit: 'clip'
