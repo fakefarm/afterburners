@@ -13,10 +13,5 @@
     - @user.mixes.each do |mix|
       .mix-thumb
         h4=link_to mix
-          .cover
-            - if mix.image_url.empty?
-              = image_tag "abcd1.png"
-            - else
-              = filepicker_image_tag mix.image_url, w: 370, h: 370, fit: 'clip'
-          p.title= mix.title
-          p.stats= "#{mix.votes.count} #{"promotion".pluralize(mix.votes.count)} | #{mix.comments.count} #{"comment".pluralize(mix.comments.count)}"
+          .cover= render 'layouts/shared/album_cover', mix: mix
+          = render 'layouts/shared/album_details', mix: mix

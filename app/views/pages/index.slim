@@ -3,12 +3,12 @@
   h2 The best memories have a song in the background.
 
 .button-garnish
-  .mixes
+  .mix-grid
     - @mixes.each do |mix|
-      .mix
-        = link_to mix_path(mix) do
-          = image_tag mix.image_url
-          p= mix.title
+      .mix-thumb
+        h4=link_to mix
+          .cover= render 'layouts/shared/album_cover', mix: mix
+          = render 'layouts/shared/album_details', mix: mix
   .copy
     h3 Share your story...
   .action
