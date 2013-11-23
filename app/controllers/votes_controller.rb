@@ -1,7 +1,8 @@
 class VotesController < ApplicationController
   before_action :require_user, only: [:create]
   def index
-    @popular = Vote.all
+    # What's the query for Mixes.where votes > 0?
+    @popular = Mix.all
   end
 
   def create

@@ -1,4 +1,10 @@
-h1 Popular playlists
-- @popular.each do |mix|
-  =link_to mix.voteable.title, mix_path(mix.voteable.id)
-  =link_to mix.user.username, user_path(mix.user.id)
+.mix-summary
+  h3 Popular playlists
+
+.mix-grid
+  - @popular.each do |mix|
+    - if mix.votes.count > 0
+      .mix-thumb
+        h4=link_to mix
+          .cover= render 'layouts/shared/album_cover', mix: mix
+          = render 'layouts/shared/album_details', mix: mix
