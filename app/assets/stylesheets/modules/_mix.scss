@@ -25,6 +25,14 @@
 
 .mix-details{
   @include span-columns(4);
+  img{
+    width: 100%;
+  }
+}
+
+.player{
+  @include span-columns(8);
+  float: right;
 }
 
 // New Mix Page
@@ -47,10 +55,6 @@
   @include span-columns(3);
 }
 
-
-.player{
-  float: right;
-}
 
 .step-help{
   color: $blue;

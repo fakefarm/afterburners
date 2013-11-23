@@ -31,3 +31,11 @@ input[type="submit"] {
     text-align: center;
   }
 }
+
+.delete-link{
+  color: red;
+  &:hover{
+    background: red;
+    color: white;
+  }
+}

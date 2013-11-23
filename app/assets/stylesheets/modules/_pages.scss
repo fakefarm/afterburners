@@ -5,6 +5,9 @@
     .mix{
       @include span-columns(3);
       img{ width: 100%;}
+      p{
+        overflow: hidden;
+      }
     }
   }
   background: white;
