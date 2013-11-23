@@ -18,7 +18,10 @@
 .mix
   .mix-details
     .bio
-      = filepicker_image_tag @mix.image_url, w: 370, h: 370, fit: 'clip'
+      - if @mix.image_url.nil?
+        = image_tag "abcd1.png"
+      - else
+        = filepicker_image_tag @mix.image_url, w: 370, h: 370, fit: 'clip'
       p= @mix.body
 
     .comments

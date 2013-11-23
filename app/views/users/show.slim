@@ -8,11 +8,15 @@
       span= " | "
       = link_to "delete profile", user_path(@user), method: 'delete'
   .mix-summary
-    h3= "#{@user.mixes.count} mixes"
+    h3= "#{@user.mixes.count} #{"mix".pluralize(@user.mixes.count)}"
   .mix-grid
     - @user.mixes.each do |mix|
       .mix-thumb
         h4=link_to mix
-          .cover=image_tag mix.image_url
+          .cover
+            - if mix.image_url.nil?
+              = image_tag "abcd1.png"
+            - else
+              = filepicker_image_tag mix.image_url, w: 370, h: 370, fit: 'clip'
           p.title= mix.title
           p.stats= "#{mix.votes.count} #{"promotion".pluralize(mix.votes.count)} | #{mix.comments.count} #{"comment".pluralize(mix.comments.count)}"
