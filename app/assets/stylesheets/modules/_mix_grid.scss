@@ -7,7 +7,7 @@
     p.title {
       overflow: hidden;
       padding: 0;
-      margin: 0 0 0.2em 0;
+      margin: 0.2em 0;
     }
     p.stats {
       font-size: 0.8em;
@@ -15,6 +15,11 @@
       padding: 0;
       margin: 0;
       font-weight: 100;
+    }
+    &:hover{
+      background: $highlight;
+      padding: 0.5em;
+      p {color: $black;}
     }
   }
 }

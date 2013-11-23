@@ -1,3 +1,12 @@
+.mix-garnish{
+  h2{
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+    font-family: $cond;
+  }
+}
+
 .button-garnish{
   @include row;
   .mixes{

@@ -7,7 +7,7 @@
       h2.username= link_to user.username, user
       p.title
         - if user.mixes.count > 0
-          = user.mixes.count
+          = "#{user.mixes.count} #{"mix".pluralize(user.mixes.count)}"
           span= ' mixes'
         - else
           span= 'No mixes, yet'

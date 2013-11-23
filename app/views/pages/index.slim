@@ -2,13 +2,16 @@
   h1 What's the <i>story</i> behind your mix?
   h2 The best memories have a song in the background.
 
-.button-garnish
+.mix-garnish
+  h2 Newest mixes...
   .mix-grid
     - @mixes.each do |mix|
       .mix-thumb
         h4=link_to mix
           .cover= render 'layouts/shared/album_cover', mix: mix
           = render 'layouts/shared/album_details', mix: mix
+
+.button-garnish
   .copy
     h3 Share your story...
   .action
