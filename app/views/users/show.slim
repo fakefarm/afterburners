@@ -1,14 +1,18 @@
 .list
-  = gravatar_for @user
-  h1= @user.username
-  h2= @user.email
-  = link_to "edit profile", edit_user_path(@user)
-  span= " | "
-  = link_to "delete profile", user_path(@user), method: 'delete'
-  h3 Mixes
-  .mix-list
-  - @user.mixes.each do |mix|
-    h4=link_to mix
-      .cover=image_tag mix.image_url
-      = mix.title
-
+  .user-summary
+    .profile-pic= gravatar_for @user
+    h1.username= @user.username
+    - if current_user.id == params[:id].to_i
+      p.email= @user.email
+      = link_to "edit profile", edit_user_path(@user)
+      span= " | "
+      = link_to "delete profile", user_path(@user), method: 'delete'
+  .mix-summary
+    h3= "#{@user.mixes.count} mixes"
+  .mix-grid
+    - @user.mixes.each do |mix|
+      .mix-thumb
+        h4=link_to mix
+          .cover=image_tag mix.image_url
+          p.title= mix.title
+          p.stats= "#{mix.votes.count} #{"promotion".pluralize(mix.votes.count)} | #{mix.comments.count} #{"comment".pluralize(mix.comments.count)}"
