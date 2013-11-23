@@ -10,6 +10,11 @@
   margin-top: 2em;
 }
 
+.l-memo-size{
+ @include span-columns(5);
+ @include shift(3);
+}
+
 .l-header, .l-footer{
   .nav{
     @include outer-container;

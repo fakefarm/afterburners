@@ -29,6 +29,7 @@
         li= link_to signup_path do
           = "Sign Up "
           i.fa.fa-check
-        li= link_to login_path do
+        li#log_in_link
           = "Log in "
           i.fa.fa-sign-in
+          = render 'layouts/shared/log_in'
