@@ -1,11 +1,17 @@
-h1 Friends
-- @users.each do |user|
-  = gravatar_for user
-  p= link_to user.username, user
-  p
-    = user.mixes.count
-    span= ' mixes'
-  - if user.mixes.last
-    p
-      span= 'Latest: '
-      =link_to user.mixes.last.title, mix_path(user.mixes.first)
+.mix-summary
+  h3 Mix Makers
+.user-grid
+  - @users.each do |user|
+    .user-thumb
+      = gravatar_for user
+      h2.username= link_to user.username, user
+      p.title
+        - if user.mixes.count > 0
+          = user.mixes.count
+          span= ' mixes'
+        - else
+          span= 'No mixes, yet'
+      - if user.mixes.last
+        p.stats
+          span= 'Latest: '
+          =link_to user.mixes.last.title, mix_path(user.mixes.first)
