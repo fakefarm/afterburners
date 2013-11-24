@@ -8,7 +8,6 @@
       p.title
         - if user.mixes.count > 0
           = "#{user.mixes.count} #{"mix".pluralize(user.mixes.count)}"
-          span= ' mixes'
         - else
           span= 'No mixes, yet'
       - if user.mixes.last
