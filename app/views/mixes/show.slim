@@ -13,6 +13,7 @@
         = 'promote '
         i.fa.fa-arrow-up
       span=" (#{@mix.votes.count})"
+      span = render 'layouts/shared/tweet'
 - if logged_in? && current_user.id == @mix.user_id
   = link_to "Delete Mix", mix_path(@mix), method: :delete, confirm: "Delete mix?", class: 'delete-link'
 .mix
