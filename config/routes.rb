@@ -6,6 +6,7 @@ Afterburners::Application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+  get 'about', to: 'pages#about'
 
   resources :categories, only: [:index, :create, :new]
   resources :mixes

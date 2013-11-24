@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many  :mixes
+  has_many  :mixes, dependent: :destroy
   has_many  :comments, as: :commentable
   has_many  :votes
 

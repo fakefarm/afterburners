@@ -12,9 +12,6 @@
         li= link_to new_mix_path do
           = "New Mix "
           i.fa.fa-play-circle
-        / li= link_to categories_path do
-        /   = "Categories "
-        /   i.fa.fa-pencil
         li= link_to votes_path do
           = "Popular "
           i.fa.fa-thumbs-o-up
@@ -28,6 +25,9 @@
         li= link_to votes_path do
           = "Popular "
           i.fa.fa-thumbs-o-up
+        li= link_to users_path do
+          = 'Mixers '
+          i.fa.fa-group
         li= link_to signup_path do
           = "Sign Up "
           i.fa.fa-check
