@@ -7,3 +7,16 @@
   }
   margin-bottom: 0.5em;
 }
+
+.new-user{
+  @include row;
+  .copy{
+    @include span-columns(5);
+    padding-right: 2em;
+  }
+  .form-entry{
+    @include span-columns(7);
+    border-left: 1px dashed $light-grey;
+    padding-left: 2em;
+  }
+}
