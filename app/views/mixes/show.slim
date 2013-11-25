@@ -4,7 +4,7 @@
   .author
     p
       span= "A "
-      span= link_to @mix.category.title, categories_path
+      / span= link_to @mix.category.title, categories_path
       span= " mix by "
       span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
   .votes
@@ -16,6 +16,7 @@
     p.tweet = render 'layouts/shared/tweet'
 - if logged_in? && current_user.id == @mix.user_id
   = link_to "Delete Mix", mix_path(@mix), method: :delete, confirm: "Delete mix?", class: 'delete-link'
+  = link_to " Edit Mix", edit_mix_path(@mix)
 .mix
   .mix-details
     .bio
