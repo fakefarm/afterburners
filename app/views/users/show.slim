@@ -22,14 +22,15 @@
   .promotion-grid
     - @votes.each do |vote|
       .mix-thumb
-        = link_to mix_path(vote.voteable.id) do
-          - if vote.voteable.image_url.empty?
-            = image_tag "abcd1.png"
-          - else
-            = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
+        - if vote.voteable_id.present?
           = link_to mix_path(vote.voteable_id) do
-            i.fa.fa-arrow-up
-            = " #{vote.voteable.title}"
+            - if vote.voteable.image_url.empty?
+              = image_tag "abcd1.png"
+            - else
+              = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
+            = link_to mix_path(vote.voteable_id) do
+              i.fa.fa-arrow-up
+              = " #{vote.voteable.title}"
 
   .mix-summary
     h3 Comments
