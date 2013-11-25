@@ -22,7 +22,7 @@
   .promotion-grid
     - @votes.each do |vote|
       .mix-thumb
-        - if vote.voteable_id.present?
+        - if vote.voteable.nil?
           = link_to mix_path(vote.voteable_id) do
             - if vote.voteable.image_url.empty?
               = image_tag "abcd1.png"
