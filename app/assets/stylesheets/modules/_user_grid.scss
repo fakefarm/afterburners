@@ -1,8 +1,11 @@
 .user-grid {
-  @include row;
+  @include outer-container;
   .user-thumb {
     @include span-columns(2);
-    @include omega(2);
+    @include omega(6n);
+    display: block;
+    margin-bottom: 2em;
+    padding: 0 1em;
     h2{
       padding: 0;
       margin: 0;
