@@ -11,6 +11,6 @@ Afterburners::Application.routes.draw do
   resources :categories, only: [:index, :create, :new]
   resources :mixes
   resources :comments
-  resources :users
+  resources :users, path: 'mixers/'
   resources :votes, only: [:create, :index]
 end
