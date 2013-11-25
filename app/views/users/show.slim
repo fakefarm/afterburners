@@ -22,15 +22,14 @@
   .promotion-grid
     - @votes.each do |vote|
       .mix-thumb
-        - if vote.voteable.nil?
+        = link_to mix_path(vote.voteable_id) do
+          - if vote.voteable.image_url.empty?
+            = image_tag "abcd1.png"
+          - else
+            = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
           = link_to mix_path(vote.voteable_id) do
-            - if vote.voteable.image_url.empty?
-              = image_tag "abcd1.png"
-            - else
-              = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
-            = link_to mix_path(vote.voteable_id) do
-              i.fa.fa-arrow-up
-              = " #{vote.voteable.title}"
+            i.fa.fa-arrow-up
+            = " #{vote.voteable.title}"
 
   .mix-summary
     h3 Comments
@@ -44,5 +43,5 @@
         .mix-details
           .title= link_to comment.commentable.title, mix_path(comment.commentable.id)
           .by= " by "
-          .user= link_to comment.commentable.user.username, user_path(comment.user_id)
+          .user= link_to comment.commentable.user.username, user_path(comment.commentable.user_id)
 
