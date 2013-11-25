@@ -1,9 +1,11 @@
-.mix-grid {
+.promotion-grid {
   @include row;
+  margin-bottom: 1em;
   .mix-thumb {
-    @include span-columns(3);
-    @include omega(4n);
+    @include span-columns(2);
+    @include omega(6n);
     img { width: 100%; }
+    font-size: 0.8em;
     p.title {
       overflow: hidden;
       padding: 0;

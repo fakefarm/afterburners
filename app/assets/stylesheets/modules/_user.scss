@@ -20,3 +20,37 @@
     padding-left: 2em;
   }
 }
+
+.comment-section{
+  @include row;
+}
+.comment-thumb{
+  @include span-columns(6);
+  @include omega(2n);
+  padding: 2em 0;
+  .comment{
+    @include span-columns(12);
+    line-height: 30px;
+    border-bottom: 1px solid $light-grey;
+    padding: 0.5em 0;
+    i.fa.fa-comment{
+      margin: 0 0.2em 0 0;
+    }
+  }
+  .mix-details{
+    width: 100%;
+    .title{
+      float: left;
+      margin: 0 0.2em;
+    }
+    .by{
+      float: left;
+      margin: 0 0.2em;
+      font-size: 0.8em;
+    }
+    .user{
+      float: left;
+      margin: 0 0.2em;
+    }
+  }
+}
