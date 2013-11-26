@@ -3,28 +3,28 @@
   text-align: center;
 
   h1 {
-    font-size: 3em;
-    font-weight: 900;
+    font-size: 2em;
     padding: 0.3em 0 0 0;
     margin: 0;
     margin-top: 1em;
+    font-family: $cond;
   }
   h2 {
     font-size: 2em;
     padding: 0;
     margin: 0.5em 0 1em 0;
-    font-family: $cond;
+    font-family: $sans;
     font-style: italic;
     color: $slate;
   }
 
   @include media($breakpoint-desktop) {
     h1 {
-      font-size: 7.7em;
+      font-size: 5em;
       margin: 0;
     }
     h2 {
-      font-size: 3.4em;
+      font-size: 2em;
     }
   }
 }
