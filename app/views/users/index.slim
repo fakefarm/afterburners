@@ -32,9 +32,11 @@
 .user-grid
   - @users.each do |user|
     .user-thumb
-      = badge_assignment(user)
-      = gravatar_for user
-      h2.username= link_to user.username, user
+      = link_to user do
+        = badge_assignment(user)
+        = gravatar_for user
+        h2.username= user.username.titlecase
+
       p.title
         - if user.mixes_count > 0
           = "#{user.mixes_count} #{"mix".pluralize(user.mixes_count)}"
