@@ -6,6 +6,7 @@
     p.stats= "#{@mixer.mixes_count} #{"mix".pluralize(@mixer.mixes_count)}"
     p.stats
       span= 'Latest: '
+      <br>
       =link_to @mixer.mixes.last.title, mix_path(@mixer.mixes.first)
 
   .user-thumb
@@ -15,6 +16,7 @@
     p.stats= "#{@promoter.votes_count} #{"promotion".pluralize(@promoter.votes_count)}"
     p.stats
       span= 'Latest: '
+      <br>
       =link_to @promoter.mixes.last.title, mix_path(@promoter.mixes.first)
 
 
@@ -25,6 +27,7 @@
     p.stats= "#{@reviewer.comments_count} #{"review".pluralize(@reviewer.comments_count)}"
     p.stats
       span= 'Latest: '
+      <br>
       =link_to @reviewer.mixes.last.title, mix_path(@reviewer.mixes.first)
 
 .mix-summary
@@ -53,4 +56,5 @@
         p.stats
           p.stats
             span= 'Latest: '
+            <br>
             =link_to user.mixes.last.title, mix_path(user.mixes.first)

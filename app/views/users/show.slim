@@ -9,7 +9,7 @@
       span= " | "
       = link_to "delete profile", user_path(@user), method: 'delete'
   .mix-summary
-    h3= "#{@user.mixes.count} #{"mix".pluralize(@user.mixes.count)}"
+    h3= "#{@user.mixes_count} #{"mix".pluralize(@user.mixes.count)}"
   .mix-grid
     - @user.mixes.each do |mix|
       .mix-thumb
@@ -18,7 +18,7 @@
           = render 'layouts/shared/album_details', mix: mix
 
   .mix-summary
-    h3 Promotions
+    h3= "#{@user.votes_count} #{"promotion".pluralize(@user.votes_count)}"
 
   .promotion-grid
     - @votes.each do |vote|
@@ -35,8 +35,7 @@
                 = " #{vote.voteable.title}"
 
   .mix-summary
-    h3 Comments
-
+    h3= "#{@user.comments_count} #{"review".pluralize(@user.comments_count)}"
   .comment-section
     - @comments.each do |comment|
       .comment-thumb
