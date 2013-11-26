@@ -2,6 +2,7 @@
   .user-summary
     .profile-pic= gravatar_for @user
     h1.username= @user.username.titlecase
+    = badge_assignment(@user)
     - if logged_in? && current_user.id == params[:id].to_i
       p.email= @user.email
       = link_to "edit profile", edit_user_path(@user)
@@ -23,14 +24,15 @@
     - @votes.each do |vote|
       .mix-thumb
         = link_to mix_path(vote.voteable_id) do
-          - unless vote.voteable.nil? # _refactor - move this logic to?
-            - if vote.voteable.image_url.empty?
-              = image_tag "abcd1.png"
-            - else
-              = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
-            = link_to mix_path(vote.voteable_id) do
-              i.fa.fa-arrow-up
-              = " #{vote.voteable.title}"
+          - unless vote.voteable_type == "Comment"
+            - unless vote.voteable.nil? # _refactor - move this logic to?
+              - if vote.voteable.image_url.empty?
+                = image_tag "abcd1.png"
+              - else
+                = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
+              = link_to mix_path(vote.voteable_id) do
+                i.fa.fa-arrow-up
+                = " #{vote.voteable.title}"
 
   .mix-summary
     h3 Comments

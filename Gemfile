@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 gem "railties"
 gem 'jquery-rails'
 gem 'filepicker-rails'
+gem 'counter_culture', '~> 0.1.18'
 
 gem 'neat'
 gem "haml-rails"

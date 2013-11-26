@@ -5,6 +5,7 @@ class Mix < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :voteable
 
+  counter_culture :user
 
   def to_param
     "#{id} #{title}".parameterize

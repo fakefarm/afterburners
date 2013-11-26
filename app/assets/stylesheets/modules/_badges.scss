@@ -1,0 +1,28 @@
+.badge.top-badge{
+  font-size: 0.8em;
+}
+
+.user-summary h2.badge, .user-thumb h2.badge{
+  font-size: 0.8em;
+  color: $white;
+  padding: 0.8em;
+  text-align: center;
+}
+
+.mixer-badge{
+  background: $blue;
+}
+
+.promoter-badge{
+  background: $go;
+}
+
+.reviewer-badge{
+  background: $red;
+}
+
+.consumer-badge{
+ background: $mid-grey;
+ color: white;
+ padding: 2em;
+}

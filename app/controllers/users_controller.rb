@@ -9,11 +9,15 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @reviewer = User.order('comments_count desc').limit(1).first
+    @mixer = User.order('mixes_count desc').limit(1).first
+    @promoter = User.order('votes_count desc').limit(1).first
   end
 
   def show
     @comments = Comment.where(user_id: params[:id])
     @votes = Vote.where(user_id: params[:id])
+
   end
 
   def create

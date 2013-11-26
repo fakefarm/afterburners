@@ -1,16 +1,54 @@
+.user-grid
+  .user-thumb
+    h2.badge.top-badge.mixer-badge Top Mixer
+    = gravatar_for @mixer
+    h2.username= link_to @mixer.username, @mixer
+    p.stats= "#{@mixer.mixes_count} #{"mix".pluralize(@mixer.mixes_count)}"
+    p.stats
+      span= 'Latest: '
+      =link_to @mixer.mixes.last.title, mix_path(@mixer.mixes.first)
+
+  .user-thumb
+    h2.badge.top-badge.promoter-badge Top Promoter
+    = gravatar_for @promoter
+    h2.username= link_to @promoter.username, @promoter
+    p.stats= "#{@promoter.votes_count} #{"promotion".pluralize(@promoter.votes_count)}"
+    p.stats
+      span= 'Latest: '
+      =link_to @promoter.mixes.last.title, mix_path(@promoter.mixes.first)
+
+
+  .user-thumb
+    h2.badge.top-badge.reviewer-badge Top Reviewer
+    = gravatar_for @reviewer
+    h2.username= link_to @reviewer.username, @reviewer
+    p.stats= "#{@reviewer.comments_count} #{"review".pluralize(@reviewer.comments_count)}"
+    p.stats
+      span= 'Latest: '
+      =link_to @reviewer.mixes.last.title, mix_path(@reviewer.mixes.first)
+
 .mix-summary
   h3= "#{@users.count} Mixers"
 .user-grid
   - @users.each do |user|
     .user-thumb
+      = badge_assignment(user)
       = gravatar_for user
       h2.username= link_to user.username, user
       p.title
-        - if user.mixes.count > 0
-          = "#{user.mixes.count} #{"mix".pluralize(user.mixes.count)}"
-        - else
-          span= 'No mixes, yet'
+        - if user.mixes_count > 0
+          = "#{user.mixes_count} #{"mix".pluralize(user.mixes_count)}"
+      p.title
+        - if user.votes_count > 0
+          = "#{user.votes_count} #{"promotion".pluralize(user.votes_count)}"
+      p.title
+        - if user.comments_count > 0
+          = "#{user.comments_count} #{"review".pluralize(user.comments_count)}"
+
+
+
       - if user.mixes.last
         p.stats
-          span= 'Latest: '
-          =link_to user.mixes.last.title, mix_path(user.mixes.first)
+          p.stats
+            span= 'Latest: '
+            =link_to user.mixes.last.title, mix_path(user.mixes.first)
