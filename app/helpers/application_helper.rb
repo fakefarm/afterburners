@@ -6,14 +6,14 @@ module ApplicationHelper
   end
 
   def badge_assignment(user)
-    if user.comments_count > user.votes_count && user.comments_count > user.mixes_count
+    if user.comments_count == 0 && user.votes_count == 0 && user.mixes_count == 0
+      raw("<h2 class='badge consumer-badge'>Consumer</h2>")
+    elsif user.comments_count > user.votes_count && user.comments_count > user.mixes_count
       raw("<h2 class='badge reviewer-badge'>Reviewer</h2>")
-    elsif user.mixes_count >= user.comments_count || user.mixes_count >= user.votes_count
-      raw("<h2 class='badge mixer-badge'>Mixer</h2>")
-    elsif user.votes_count > user.comments_count || user.votes_count > user.mixes_count
+    elsif user.votes_count > user.comments_count && user.votes_count > user.mixes_count
       raw("<h2 class='badge promoter-badge'>Promoter</h2>")
     else
-      raw("<h2 class='badge consumer-badge'>Consumer</h2>")
+      raw("<h2 class='badge mixer-badge'>Mixer</h2>")
     end
   end
 end
