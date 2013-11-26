@@ -1,8 +1,9 @@
 .user-grid
   .user-thumb
-    h2.badge.top-badge.mixer-badge Top Mixer
-    = gravatar_for @mixer
-    h2.username= link_to @mixer.username, @mixer
+    = link_to @mixer do
+      h2.badge.top-badge.mixer-badge Top Mixer
+      = gravatar_for @mixer
+      h2.username= link_to @mixer.username, @mixer
     p.stats= "#{@mixer.mixes_count} #{"mix".pluralize(@mixer.mixes_count)}"
     p.stats
       span= 'Latest: '
@@ -10,9 +11,10 @@
       =link_to @mixer.mixes.last.title, mix_path(@mixer.mixes.first)
 
   .user-thumb
-    h2.badge.top-badge.promoter-badge Top Promoter
-    = gravatar_for @promoter
-    h2.username= link_to @promoter.username, @promoter
+    = link_to @promoter do
+      h2.badge.top-badge.promoter-badge Top Promoter
+      = gravatar_for @promoter
+      h2.username= link_to @promoter.username, @promoter
     p.stats= "#{@promoter.votes_count} #{"promotion".pluralize(@promoter.votes_count)}"
     p.stats
       span= 'Latest: '
@@ -21,9 +23,10 @@
 
 
   .user-thumb
-    h2.badge.top-badge.reviewer-badge Top Reviewer
-    = gravatar_for @reviewer
-    h2.username= link_to @reviewer.username, @reviewer
+    = link_to @reviewer do
+      h2.badge.top-badge.reviewer-badge Top Reviewer
+      = gravatar_for @reviewer
+      h2.username= link_to @reviewer.username, @reviewer
     p.stats= "#{@reviewer.comments_count} #{"review".pluralize(@reviewer.comments_count)}"
     p.stats
       span= 'Latest: '
