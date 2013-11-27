@@ -5,5 +5,5 @@ class Vote < ActiveRecord::Base
 
   counter_culture :user
 
-  validates_uniqueness_of :user_id, scope: :voteable
+  # validates_uniqueness_of :user_id, scope: :voteable
 end

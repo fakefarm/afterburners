@@ -2,12 +2,15 @@ class CommentsController < ApplicationController
   before_action :require_user
 
   def create
+    # require 'pry'; binding.pry
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      flash[:notice] = "Thanks for the comment!"
+      redirect_to :back, notice: 'Thanks for the comment!'
+      # format.html { redirect_to :back, notice: 'Thanks for the comment!' }
+      # format.json # { render action: 'show', status: :created, location: @mix }
     end
-      redirect_to :back
+      # redirect_to :back
   end
 
 private

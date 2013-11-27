@@ -8,8 +8,7 @@ gem 'filepicker-rails'
 gem 'counter_culture', '~> 0.1.18'
 
 gem 'neat'
-gem "haml-rails"
-gem 'meta-tags', :require => 'meta_tags'
+# gem 'meta-tags', :require => 'meta_tags'
 gem 'thin'
 gem 'redcarpet', '1.17.2'
 gem 'newrelic_rpm'
@@ -39,7 +38,7 @@ group :development do
   gem "letter_opener"
   gem 'pry'
   gem 'binding_of_caller'
-  gem 'xray-rails'
+  # gem 'xray-rails'
   gem 'guard-spork', :github => 'guard/guard-spork'
   gem 'childprocess'
   gem 'spork', '0.9.2'

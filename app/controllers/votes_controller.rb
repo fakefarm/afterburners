@@ -6,6 +6,8 @@ class VotesController < ApplicationController
   end
 
   def create
+    # This smells t :)
+    # attempt at polymorphic comments - but i don't want voted comments
     if params[:type] == "Mix"
       record = Mix.find(params[:id])
     else
@@ -15,13 +17,18 @@ class VotesController < ApplicationController
         record = Comment.find(params[:id])
       end
     end
-    vote = Vote.create(voteable: record, user_id: current_user.id, vote: true)
-    if vote.valid?
-      flash[:notice] = 'Thanks for the vote!'
-    else
-      flash[:error] = 'Sorry... only one per person. Gotta save some for the others.'
-    end
-      redirect_to :back
+    Vote.create(voteable: record, user_id: current_user.id, vote: true)
+    # if vote.valid?
+    #   if vote.save
+
+        respond_to do |format|
+          format.html { redirect_to :back, notice: 'Thanks for the vote!' }
+          format.js
+        end
+
+
+    #   end
+    # end
   end
 
 private

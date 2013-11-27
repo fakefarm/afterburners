@@ -5,10 +5,6 @@
       = gravatar_for @mixer
       h2.username= link_to @mixer.username, @mixer
     p.stats= "#{@mixer.mixes_count} #{"mix".pluralize(@mixer.mixes_count)}"
-    p.stats
-      span= 'Latest: '
-      <br>
-      =link_to @mixer.mixes.last.title, mix_path(@mixer.mixes.first)
 
   .user-thumb
     = link_to @promoter do
@@ -16,11 +12,6 @@
       = gravatar_for @promoter
       h2.username= link_to @promoter.username, @promoter
     p.stats= "#{@promoter.votes_count} #{"promotion".pluralize(@promoter.votes_count)}"
-    p.stats
-      span= 'Latest: '
-      <br>
-      =link_to @promoter.mixes.last.title, mix_path(@promoter.mixes.first)
-
 
   .user-thumb
     = link_to @reviewer do
@@ -28,10 +19,6 @@
       = gravatar_for @reviewer
       h2.username= link_to @reviewer.username, @reviewer
     p.stats= "#{@reviewer.comments_count} #{"review".pluralize(@reviewer.comments_count)}"
-    p.stats
-      span= 'Latest: '
-      <br>
-      =link_to @reviewer.mixes.last.title, mix_path(@reviewer.mixes.first)
 
 .mix-summary
   h3= "#{@users.count} Mixers"
@@ -43,21 +30,7 @@
         = gravatar_for user
         h2.username= user.username.titlecase
 
-      p.title
-        - if user.mixes_count > 0
-          = "#{user.mixes_count} #{"mix".pluralize(user.mixes_count)}"
-      p.title
-        - if user.votes_count > 0
-          = "#{user.votes_count} #{"promotion".pluralize(user.votes_count)}"
-      p.title
-        - if user.comments_count > 0
-          = "#{user.comments_count} #{"review".pluralize(user.comments_count)}"
-
-
-
       - if user.mixes.last
         p.stats
           p.stats
-            span= 'Latest: '
-            <br>
             =link_to user.mixes.last.title, mix_path(user.mixes.first)

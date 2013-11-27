@@ -1,5 +1,5 @@
 class MixesController < ApplicationController
-  before_action :find_mix, only: [:show, :edit, :update, :destroy]
+  before_action :find_mix, only: [:show, :edit, :update, :destroy, :foo]
   before_action :require_user, except: [:index, :show]
 
   def index
