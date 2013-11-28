@@ -6,7 +6,7 @@
       span= "A "
       / span= link_to @mix.category.title, categories_path
       span= " mix by "
-      span= link_to (@mix.user.username).html_safe, user_path(@mix.user.id)
+      span= link_to (@mix.user.username).html_safe, user_path(@mix.user)
   .votes#votes
     p.promote
       =link_to votes_path(type: 'Mix', id: @mix.id), method: :post, remote: true do
@@ -42,7 +42,7 @@
               i.fa.fa-thumbs-up
           .user
             = '- '
-            = link_to c.user.username, user_path(c.user_id)
+            = link_to c.user.username, user_path(c.user)
 
   .player
     <iframe src="https://embed.spotify.com/?uri=#{@mix.spotify_url}&theme=white" width="640" height="720" frameborder="0" allowtransparency="true"></iframe>

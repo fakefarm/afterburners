@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126144137) do
+ActiveRecord::Schema.define(version: 20131128014433) do
 
   create_table "categories", force: true do |t|
     t.string "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20131126144137) do
     t.integer  "user_id"
     t.string   "image_url"
     t.integer  "category_id"
+    t.string   "slug"
   end
 
   create_table "users", force: true do |t|
@@ -45,6 +46,8 @@ ActiveRecord::Schema.define(version: 20131126144137) do
     t.integer "mixes_count",     default: 0, null: false
     t.integer "votes_count",     default: 0, null: false
     t.integer "comments_count",  default: 0, null: false
+    t.string  "slug"
+    t.string  "role"
   end
 
   create_table "votes", force: true do |t|

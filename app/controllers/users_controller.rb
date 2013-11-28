@@ -52,11 +52,12 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation, :id)
+    params.require(:user).permit(:email, :username, :password, :password_confirmation, :id, :slug)
   end
 
   def find_user
-    @user = User.find(params[:id])
+    # routing convention - params[:id] will not change to params[:slug]
+    @user = User.find_by(slug: params[:id])
   end
 
   def authorized_user

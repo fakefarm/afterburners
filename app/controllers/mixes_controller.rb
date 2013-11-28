@@ -56,7 +56,7 @@ class MixesController < ApplicationController
 private
 
     def find_mix
-      @mix = Mix.find(params[:id])
+      @mix = Mix.find_by(slug: params[:id])
     end
 
 
