@@ -7,7 +7,7 @@ class MixesController < ApplicationController
   end
 
   def show
-    @comments = Comment.where(commentable_id: @mix.id).reverse
+    @comments = Comment.where(commentable: @mix).reverse
     @comment = Comment.new
   end
 
@@ -61,6 +61,6 @@ private
 
 
     def mix_params
-      params.require(:mix).permit(:title, :body, :profile_id, :spotify_url, :category_id, :image_url, :user_id, :commentable)
+      params.require(:mix).permit(:title, :slug, :body, :profile_id, :spotify_url, :category_id, :image_url, :user_id, :commentable)
     end
 end
