@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
 gem "railties"
 gem 'jquery-rails'
 gem 'filepicker-rails'
 gem 'counter_culture', '~> 0.1.18'
 
 gem 'neat'
-# gem 'meta-tags', :require => 'meta_tags'
+gem 'meta-tags', :require => 'meta_tags'
 gem 'thin'
 gem 'redcarpet', '1.17.2'
 gem 'newrelic_rpm'
@@ -38,7 +38,7 @@ group :development do
   gem "letter_opener"
   gem 'pry'
   gem 'binding_of_caller'
-  # gem 'xray-rails'
+  gem 'xray-rails'
   gem 'guard-spork', :github => 'guard/guard-spork'
   gem 'childprocess'
   gem 'spork', '0.9.2'
@@ -71,5 +71,5 @@ end
 
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
