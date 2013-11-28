@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @comments = Comment.where(user_id: params[:id])
-    @votes = Vote.where(user_id: params[:id], voteable_type:'Mix')
+    user = User.find_by(slug: params[:id])
+    @comments = Comment.where(user_id: user)
+    @votes = Vote.where(user_id: user, voteable_type:'Mix')
   end
 
   def create
