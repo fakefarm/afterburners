@@ -22,7 +22,6 @@
 
   .promotion-grid
     - @votes.each do |vote|
-      - require 'pry'; binding.pry
       .mix-thumb
         = link_to mix_path(vote.voteable_id) do
           - unless vote.voteable_type == "Comment"
