@@ -25,8 +25,6 @@
           .mix-details
             - unless comment.commentable.nil? # _refactor - move this logic to?
               .title= link_to comment.commentable.title, mix_path(comment.commentable)
-              .by= " by "
-              .user= link_to comment.commentable.user.username, user_path(comment.commentable.user)
 
 
 .button-garnish
