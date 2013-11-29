@@ -1,8 +1,8 @@
 .list
   .user-summary
+    = badge_assignment(@user)
     .profile-pic= gravatar_for @user
     h1.username= @user.username.titlecase
-    = badge_assignment(@user)
     - if logged_in? && current_user.slug == params[:id]
       p.email= @user.email
       = link_to "edit profile", edit_user_path(@user)
@@ -27,7 +27,7 @@
           - unless vote.voteable_type == "Comment"
             - unless vote.voteable.nil? # _refactor - move this logic to?
               - if vote.voteable.image_url.empty?
-                = image_tag "abcd1.png"
+                = image_tag image_url("assets/abcd1.png")
               - else
                 = filepicker_image_tag vote.voteable.image_url, w: 370, h: 370, fit: 'clip'
               = link_to mix_path(vote.voteable) do
