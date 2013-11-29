@@ -7,6 +7,10 @@
     margin: 0;
     font-size: 2em;
   }
+  a{
+    color: black;
+    &:hover{ color: $blue }
+  }
 }
 .mix-garnish{
   @include span-columns(8);

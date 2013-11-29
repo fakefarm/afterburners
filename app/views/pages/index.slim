@@ -14,17 +14,18 @@
   .comment-stream
     h2 Newest reviews...
     - @comments.each do |comment|
-      .comment-wrapper
-        .cover-thumb= render 'layouts/shared/album_cover', mix: comment.commentable
-        .comment
-          i.fa.fa-comment
-          - if comment.comment.length > 50
-            = comment.comment[0...50] + '...'
-          -else
-            = comment.comment
-          .mix-details
-            - unless comment.commentable.nil? # _refactor - move this logic to?
-              .title= link_to comment.commentable.title, mix_path(comment.commentable)
+      = link_to mix_path(comment.commentable) do
+        .comment-wrapper
+          .cover-thumb= render 'layouts/shared/album_cover', mix: comment.commentable
+          .comment
+            i.fa.fa-comment
+            - if comment.comment.length > 50
+              = comment.comment[0...50] + '...'
+            -else
+              = comment.comment
+            .mix-details
+              - unless comment.commentable.nil? # _refactor - move this logic to?
+                .title= comment.commentable.title
 
 
 .button-garnish
