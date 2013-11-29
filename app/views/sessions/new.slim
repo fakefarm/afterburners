@@ -1,8 +1,7 @@
-.l-memo-size.form
-  h2 Log in time...
-  = form_tag '/login' do
-    p= label_tag :username
-    p= text_field_tag :username, params[:username] || ''
-    p= label_tag :password
-    p= password_field_tag :password, params[:password] || ''
-    p= submit_tag "Login"
+h2 Log in time...
+= form_tag '/login' do
+  p= label_tag :username
+  p= text_field_tag :username, params[:username] || ''
+  p= label_tag :password
+  p= password_field_tag :password, params[:password] || ''
+  p= submit_tag "Login"
