@@ -24,6 +24,10 @@ class VotesController < ApplicationController
           format.js { render :layout => false }
         end
       end
+    else
+      respond_to do |format|
+        format.js { render :layout => false }
+      end
     end
   end
 

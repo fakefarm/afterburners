@@ -15,9 +15,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by(slug: params[:id])
-    @comments = Comment.where(user_id: user)
-    @votes = Vote.where(user_id: user, voteable_type:'Mix')
+    @comments = Comment.where(user_id: @user)
+    @votes = Vote.where(user_id: @user, voteable_type:'Mix')
+
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: [@user, @comments, @votes]
+      end
+    end
   end
 
   def create
