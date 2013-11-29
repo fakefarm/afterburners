@@ -3,7 +3,6 @@
     .profile-pic= gravatar_for @user
     h1.username= @user.username.titlecase
     = badge_assignment(@user)
-    - require 'pry'; binding.pry
     - if logged_in? && current_user.slug == params[:id]
       p.email= @user.email
       = link_to "edit profile", edit_user_path(@user)
