@@ -1,10 +1,52 @@
-.mix-garnish{
-  h2{
+
+.activity-stream{
+  @include row;
+  h2 {
+    font-family: $cond;
     padding: 0;
     margin: 0;
     font-size: 2em;
-    font-family: $cond;
   }
+}
+.mix-garnish{
+  @include span-columns(8);
+}
+.comment-stream{
+  @include span-columns(4);
+  .comment-wrapper{
+    padding: 0.3em 0;
+      @include row;
+      margin-bottom: 0.5em;
+    .cover-thumb{
+      @include span-columns(3);
+      img{ width: 100%; }
+    }
+    .comment{
+      @include span-columns(8);
+      line-height: 30px;
+      padding: 0.5em 0;
+      i.fa.fa-comment{
+        margin: 0 0.2em 0 0;
+      }
+    }
+    .mix-details{
+      width: 100%;
+      .title{
+        float: left;
+        margin: 0 0.2em;
+      }
+      .by{
+        float: left;
+        margin: 0 0.2em;
+        font-size: 0.8em;
+      }
+      .user{
+        float: left;
+        margin: 0 0.2em;
+      }
+    }
+  }
+
 }
 
 .button-garnish{

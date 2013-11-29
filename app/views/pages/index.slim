@@ -2,14 +2,32 @@
   h1 your playlist is more than music
   h2 Share, promote, and review playlists with friends
 
-.mix-garnish
-  h2 Newest mixes...
-  .mix-grid
-    - @mixes.each do |mix|
-      .mix-thumb
-        h4=link_to mix
-          .cover= render 'layouts/shared/album_cover', mix: mix
-          = render 'layouts/shared/album_details', mix: mix
+.activity-stream
+  .mix-garnish
+    h2 Newest mixes...
+    .mix-grid
+      - @mixes.each do |mix|
+        .mix-thumb
+          h4=link_to mix
+            .cover= render 'layouts/shared/album_cover', mix: mix
+            = render 'layouts/shared/album_details', mix: mix
+  .comment-stream
+    h2 Newest reviews...
+    - @comments.each do |comment|
+      .comment-wrapper
+        .cover-thumb= render 'layouts/shared/album_cover', mix: comment.commentable
+        .comment
+          i.fa.fa-comment
+          - if comment.comment.length > 50
+            = comment.comment[0...50] + '...'
+          -else
+            = comment.comment
+          .mix-details
+            - unless comment.commentable.nil? # _refactor - move this logic to?
+              .title= link_to comment.commentable.title, mix_path(comment.commentable)
+              .by= " by "
+              .user= link_to comment.commentable.user.username, user_path(comment.commentable.user)
+
 
 .button-garnish
   .copy
