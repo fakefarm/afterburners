@@ -14,9 +14,13 @@
 }
 .mix-garnish{
   @include span-columns(8);
+  @include omega(4n);
 }
 .comment-stream{
   @include span-columns(4);
+  background: white;
+  padding: 1em 1em 0 2em;
+  margin-bottom: 2em;
   .comment-wrapper{
     padding: 0.3em 0;
       @include row;

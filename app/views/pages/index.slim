@@ -11,7 +11,7 @@
           h4=link_to mix
             .cover= render 'layouts/shared/album_cover', mix: mix
             = render 'layouts/shared/album_details', mix: mix
-  .comment-stream
+  .comment-stream.form
     h2 Newest reviews...
     - @comments.each do |comment|
       = link_to mix_path(comment.commentable) do
@@ -28,7 +28,7 @@
                 .title= comment.commentable.title
 
 
-.button-garnish
+.button-garnish.form
   .copy
     h3 Share your story...
   .action
