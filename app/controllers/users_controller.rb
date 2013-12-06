@@ -68,7 +68,7 @@ private
   end
 
   def authorized_user
-    unless current_user.id == params[:id].to_i
+    unless current_user.slug == params[:id]
       flash[:error] = 'Not authorized.'
       redirect_to users_path
     end
